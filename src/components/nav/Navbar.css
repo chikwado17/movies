@@ -1,8 +1,30 @@
+
+
 .nav-item .nav-link {
-color: #fff !important;
-font-weight: bolder;
+  color: #fff !important;
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+.navbar-brand {
+  color: #fff !important;
+  font-weight: 900 !important;
 }
 
 .container {
- max-width: 1200px !important;
+  max-width: 1300px !important;
+}
+
+@media only screen and (max-width: 767px) {
+
+  .navbar-toggler {
+    border-color:#fff !important;
+    outline: none !important;
+    color: #fff !important;
+  }
+
+  .navbar-toggler-icon {
+    outline-color: none !important;
+  }
+
 }

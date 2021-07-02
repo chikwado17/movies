@@ -13,7 +13,7 @@ const App = () => {
   const getMovies = async () => {
     setLoading(true);
     const response = await axios.get(`https://api.themoviedb.org/3/trending/all/day?api_key=6817ce4efd7fa06447615a31f75742e4`);
-    console.log(response.data.results);
+    //console.log(response.data.results);
     setMovies(response.data.results);
     setLoading(false);
   }
