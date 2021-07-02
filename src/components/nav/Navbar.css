@@ -1,0 +1,8 @@
+.nav-item .nav-link {
+color: #fff !important;
+font-weight: bolder;
+}
+
+.container {
+ max-width: 1200px !important;
+}

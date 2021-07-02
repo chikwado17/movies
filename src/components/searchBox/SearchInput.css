@@ -1,0 +1,24 @@
+.jumbotron {
+  border-radius: 0px !important;
+  -webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  -ms-border-radius: 0px !important;
+  -o-border-radius: 0px !important;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(16, 153, 255, 0.7),
+      rgba(179, 225, 255, 0.164)
+    ),
+    url('../../images/Nobody.jpg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+.jumbotron h1 {
+  font-size: 42px;
+  font-weight: bold;
+  line-height: 42px;
+}
