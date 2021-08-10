@@ -1,14 +1,18 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Spinner from '../spinner/Spinner';
-import MovieListItems from './MovieListItems';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
-import './Styles.css';
-import { PopularMovieContext } from '../../context/popularMovieContext/PopularMovieContext';
+import './styles.css';
+import VideoSliderItem from './VideoSliderItem';
+import { useContext } from 'react';
+import { TrailerMoviesContext } from '../../context/trailerMoviesContext/TrailerMoviesContext';
 
-const MovieList = () => {
 
-    const { movies, loading }  = useContext(PopularMovieContext)
+
+
+const VideosliderList = () => {
+
+    const { loading, trailerMovies } = useContext(TrailerMoviesContext); 
 
     if (loading) {
         return <Spinner />
@@ -16,7 +20,7 @@ const MovieList = () => {
         return (
             <div className="container mt-4">
                 <div>
-                    <h3 style={{fontWeight:900}} className="mb-4">What's Popular</h3>
+                    <h3 style={{fontWeight:900}} className="mb-5">Toprated</h3>
                     <Splide
                         className="mobie-desk"
                         options={{
@@ -24,18 +28,16 @@ const MovieList = () => {
                             width: 1300,
                             perPage: 2,
                             perMove: 1,
-                            gap: '1rem'
+                            gap: '1rem',
+
+                            
                         }}
                         >
-                        {!loading && movies &&
-                            movies.map((movie) => (
-                                 
-                            
-                                <SplideSlide key={movie.id}>
-                                    {/* {(console.log(movie.id))} */}
-                                    <MovieListItems movie={movie} />
+                       {!loading && trailerMovies &&
+                            trailerMovies.map((movie) => (
+                                <SplideSlide  key={movie.id}>
+                                    <VideoSliderItem  movie={movie} />
                                 </SplideSlide>
-                               
                             )
                             )}
                     </Splide>
@@ -47,22 +49,25 @@ const MovieList = () => {
                             perPage: 7,
                             perMove: 1,
                             gap: '1rem',
+
                             
                         }}
                         >
-                        {!loading && movies &&
-                            movies.map((movie) => (
+                        {!loading && trailerMovies &&
+                            trailerMovies.map((movie) => (
                                 <SplideSlide  key={movie.id}>
-                                    <MovieListItems movie={movie} />
+                                    <VideoSliderItem  movie={movie} />
                                 </SplideSlide>
                             )
-                            
                             )}
                     </Splide>
+
+
+                   
                 </div>
             </div>
         )
     }
 }
 
-export default MovieList;
+export default VideosliderList;

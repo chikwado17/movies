@@ -1,42 +1,37 @@
-import React, { useEffect, useRef, useState } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import './SearchInput.css';
-import img1 from '../../images/1622501033_maxresdefault.jpg';
-import img2 from '../../images/another.jpg';
-import img3 from '../../images/black-widow-marvel-poster-crop.jpg';
-import img11 from '../../images/f9.jpg';
-import img4 from '../../images/maxresdefault.jpg';
-import img5 from '../../images/Nobody.jpg';
-import img6 from '../../images/rock.jpg';
-import img7 from '../../images/scale.jpeg';
-import img8 from '../../images/spce.jpg';
-import img9 from '../../images/stowaway-netflix.jpg';
-import img10 from '../../images/Stowaway3.jpg';
-
-
 
 const SearchInput = () => {
-
-    const photos = [img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11]
+    const [movie, setMovie] = useState([]);
     const [search, setSearch] = useState('');
-    const [images, setImages] = useState(photos);
+
+    const getDg = async () => {
+        const res = await axios.get("https://api.themoviedb.org/3/discover/tv?api_key=6817ce4efd7fa06447615a31f75742e4&with_networks=213");
+        setMovie(
+            res.data.results[
+                Math.floor(Math.random() * res.data.results.length - 1)
+            ]
+        )
+    }
 
     useEffect(() => {
-        let res = Math.floor(Math.random() * images.length)
-        setImages(images[res])
+        getDg();
         //eslint-disable-next-line
     },[])
    
-       
     
     const handleInputSubmit = (e) => {
         e.preventDefault();
         console.log(search);
         setSearch('');
     }
-
+  
 
     const JumboTron = {
-        backgroundImage: `linear-gradient(to bottom,rgba(16, 153, 255, 0.7),rgba(179, 225, 255, 0.164)),url(${images})`,
+        backgroundSize: "cover",
+        backgroundImage: `linear-gradient(to bottom,rgba(16, 153, 255, 0.7),rgba(179, 225, 255, 0.164)),url(https://image.tmdb.org/t/p/original/${movie?.backdrop_path})`,
+        backgroundPosition: "center center"
     }
     return (
         <div className="container container-mobile">

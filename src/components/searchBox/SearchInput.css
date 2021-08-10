@@ -60,7 +60,7 @@
 
   .jumbotron {
     margin: 0px -15px !important;
-    width: 360px !important;
+    max-width: 767px !important;
     overflow-x: hidden !important;
   }
 
@@ -77,12 +77,10 @@
 }
 
   .search-btn {
-    margin-left: -70px !important;
+    margin-left: -40px !important;
     padding: 9px 20px;
     top: -44px;
   }
-
- 
 
   .jumbotron h1 {
     margin-top: 20px;
@@ -91,5 +89,12 @@
 
   .mobile-form {
     margin-top: 90px !important;
+  }
+}
+
+
+@media only screen and (max-width: 567px) {
+  .search-btn {
+    margin-left: -70px !important;
   }
 }

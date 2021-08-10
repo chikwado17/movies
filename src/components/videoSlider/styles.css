@@ -1,9 +1,17 @@
 
+.section__video {
+    background-color: #130f40;
+    background-image: linear-gradient(315deg, #130f40 0%, #000000 74%);
+    color: #fff;
+    padding-top: 10px;
+    margin-left: 10px !important;
+}
+
 
 .movie__p {
   font-family: 'Source Sans Pro', sans-serif;
   color: #000;
-}
+} 
 .movie__date {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 200;
