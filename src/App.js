@@ -1,34 +1,31 @@
 import React from 'react';
-import MovieList from './components/movies/MovieList';
 import Navbar from './components/nav/Navbar';
-import PopularMovieList from './components/populaMovies/PopularMovieList';
-import SearchInput from './components/searchBox/SearchInput';
-import VideosliderList from './components/videoSlider/VideosliderList';
+import { Route, Switch } from 'react-router-dom';
 import PopularMovieContextProvider from './context/popularMovieContext/PopularMovieContext';
 import TrailerMoviesContextProvider from './context/trailerMoviesContext/TrailerMoviesContext';
 import TrendingMovieContextProvider from './context/trendingMovieContext/TrendingMovieContext';
+import Dashboard from './pages/Dashboard';
+import SearchContextProvider from './context/searchContext/SearchContext';
+import SearchItems from './pages/search/SearchItems';
+
 
 const App = () => {
 
   return (
       <div>
           <Navbar />
-          <SearchInput />
-          <PopularMovieContextProvider>
-            <TrailerMoviesContextProvider>
-              <TrendingMovieContextProvider>
-                <div style={{paddingTop:'10px', paddingBottom: '5px'}}>
-                  <MovieList />
-                </div>
-                <div style={{background:'#F2F2F2', paddingTop:'5px', paddingBottom: '20px'}}>
-                  <VideosliderList />
-                </div>
-                <div style={{paddingTop:'20px', paddingBottom: '5px'}}>
-                  <PopularMovieList />
-                </div>
-              </TrendingMovieContextProvider>
-            </TrailerMoviesContextProvider>
-          </PopularMovieContextProvider>
+            <PopularMovieContextProvider>
+              <TrailerMoviesContextProvider>
+                <TrendingMovieContextProvider>
+                  <SearchContextProvider>
+                    <Switch>
+                      <Route path="/" exact component={Dashboard} />
+                      <Route path="/search" component={SearchItems} />
+                    </Switch>
+                  </SearchContextProvider>
+                </TrendingMovieContextProvider>
+              </TrailerMoviesContextProvider>
+            </PopularMovieContextProvider>
       </div>
   );
 }

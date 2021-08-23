@@ -15,7 +15,7 @@ const TrailerMoviesContextProvider = ({children}) => {
         
         setTrailerMovies(response.data.results);
         setLoading(false);
-      }
+    }
     
       useEffect(() => {
         getTrailersMovies();

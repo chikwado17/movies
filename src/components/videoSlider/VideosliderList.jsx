@@ -9,7 +9,6 @@ import { TrailerMoviesContext } from '../../context/trailerMoviesContext/Trailer
 
 
 
-
 const VideosliderList = () => {
 
     const { loading, trailerMovies } = useContext(TrailerMoviesContext); 
@@ -61,9 +60,6 @@ const VideosliderList = () => {
                             )
                             )}
                     </Splide>
-
-
-                   
                 </div>
             </div>
         )
