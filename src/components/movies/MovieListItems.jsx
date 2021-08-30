@@ -1,16 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Styles.css';
 
 const MovieListItems = ({movie}) => {
+    
     return (
         <>
-            <div className="card" style={{width: '10rem', height: '15rem'}}>
+            <Link to={`/movieDetails/${movie.id}-${movie.original_title}`} className="card" style={{width: '10rem', height: '15rem'}}>
                 <img style={{width:'10rem'}} className="card-img-top" src={`https://www.themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`} alt="logo 1" />
-                <div className="card-body">
-                   
-                </div>
-            </div>
-            <p className="movie__p mt-2"><b>{movie.original_title || movie.name}</b></p>
+                
+            </Link>
+            <Link to={`/movieDetails/${movie.id}-${movie.original_title}`} className="movie__p"><b>{movie.original_title || movie.name}</b></Link>
             <p className="movie__date"><b>{movie.release_date || movie.first_air_date}</b></p>
         </>
     )

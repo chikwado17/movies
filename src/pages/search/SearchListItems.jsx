@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import unnamed  from '../../images/unnamed.png';
 
 const SearchListItems = ({searchItems}) => {
     
     return (
         <>
-            <div className="card mb-3" style={{maxWidth: '540px'}}>
+            <Link to={`/movieDetails/${searchItems.id}`} className="card mb-3" style={{maxWidth: '540px', textDecoration:'none', color: '#000'}}>
                 <div className="row no-gutters">
                     <div className="col-md-4">
                     <img style={{width:'12rem', height:'15rem'}} className="card-img-top" src={
@@ -23,7 +24,7 @@ const SearchListItems = ({searchItems}) => {
                     </div>
                     </div>
                 </div>
-            </div>
+            </Link>
         </>
     )
 }

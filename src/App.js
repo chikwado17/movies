@@ -6,7 +6,10 @@ import TrailerMoviesContextProvider from './context/trailerMoviesContext/Trailer
 import TrendingMovieContextProvider from './context/trendingMovieContext/TrendingMovieContext';
 import Dashboard from './pages/Dashboard';
 import SearchContextProvider from './context/searchContext/SearchContext';
+import GetMovieDetailsContextProvider from './context/getMovieDetailsContext/GetMovieDetailsContext';
 import SearchItems from './pages/search/SearchItems';
+import MovieDetails from './pages/MovieDetails';
+import TvDetails from './pages/TvDetails';
 
 
 const App = () => {
@@ -18,10 +21,14 @@ const App = () => {
               <TrailerMoviesContextProvider>
                 <TrendingMovieContextProvider>
                   <SearchContextProvider>
-                    <Switch>
-                      <Route path="/" exact component={Dashboard} />
-                      <Route path="/search" component={SearchItems} />
-                    </Switch>
+                    <GetMovieDetailsContextProvider>
+                      <Switch>
+                        <Route path="/" exact component={Dashboard} />
+                        <Route path="/search" component={SearchItems} />
+                        <Route path="/movieDetails/:id" component={MovieDetails}/>
+                        <Route path="/tvDetails/:id" component={TvDetails}/>
+                      </Switch>
+                    </GetMovieDetailsContextProvider>
                   </SearchContextProvider>
                 </TrendingMovieContextProvider>
               </TrailerMoviesContextProvider>

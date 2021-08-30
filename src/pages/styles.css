@@ -1,0 +1,49 @@
+
+.movieDetails-img {
+    margin-top: -40px;
+    height: 450px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.jumbo-text-margin {
+    margin-left: -80px;
+}
+
+.movieDetails--genres{
+   margin: 2px;
+}
+
+@media only screen and (min-width: 768px) { 
+    .mobie-desk {
+      display: none;
+    }
+}
+   
+
+@media only screen and (max-width: 767px) { 
+    .mobie-mobile {
+    display: none;
+    }
+
+    .jumbo-text-margin {
+        margin-left: 0px !important;
+    }
+
+    .movieDetails-img {
+        height: 100% !important;
+        margin-top: 0px !important;
+    }
+}
+
+
+
+@media only screen and (max-width: 567px) {
+    .card-t {
+        width: 5rem !important;
+    }
+    
+}

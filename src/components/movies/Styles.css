@@ -2,12 +2,14 @@
 
 .movie__p {
   font-family: 'Source Sans Pro', sans-serif;
-  color: #000;
+  color: #000 !important;
+  text-decoration: none !important;
+  margin-bottom: 10rem !important;
 }
 .movie__date {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 200;
-  margin-top: -14px;
+  margin-top: -5px !important;
 }
 @media only screen and (min-width: 768px) { 
  .mobie-desk {

@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
+
 export const TrailerMoviesContext = createContext();
 
 const TrailerMoviesContextProvider = ({children}) => {
@@ -11,7 +12,7 @@ const TrailerMoviesContextProvider = ({children}) => {
 
     const getTrailersMovies = async () => {
         setLoading(true);
-        const response = await axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=6817ce4efd7fa06447615a31f75742e4&with_networks=213`);
+        const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=6817ce4efd7fa06447615a31f75742e4&with_networks=213`);
         
         setTrailerMovies(response.data.results);
         setLoading(false);
